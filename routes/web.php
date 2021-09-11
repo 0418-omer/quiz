@@ -14,10 +14,11 @@ Route::middleware(['auth', 'verified'])->get('/panel', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::group([
-    'middleware' => ['auth','isAdmin'],'prefix'=>'admin'], function (){
+Route::group(['middleware' => ['auth','isAdmin'],'prefix'=>'admin'], function (){
 
-  
+        Route::get('quizzers/{id}',[QuizController::class,'destroy'])->whereNumber('id')->name('quizzers.destroy');
         Route::resource('quizzers', QuizController::class);
+        
+
 
 });

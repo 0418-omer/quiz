@@ -29,7 +29,7 @@
       <td>
 
         <a href="{{route('quizzers.edit',$quiz->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
-        <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i> </a>
+        <a href="{{route('quizzers.destroy',$quiz->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i> </a>
 
       </td>
     </tr>
