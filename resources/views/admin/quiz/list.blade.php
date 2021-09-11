@@ -21,14 +21,14 @@
   </thead>
   <tbody>
 
-      @foreach($quizzes as $quiz)
+      @foreach($quizzers as $quiz)
     <tr>
       <td >{{$quiz->title}}</td>
       <td>{{$quiz->status}}</td>
       <td>{{$quiz->finiseh_at}}</td>
       <td>
 
-        <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
+        <a href="{{route('quizzers.edit',$quiz->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
         <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i> </a>
 
       </td>
@@ -38,7 +38,7 @@
   </tbody>
 </table>
 
-{{$quizzes->links()}}
+{{$quizzers->links()}}
 
 
 
