@@ -31,32 +31,47 @@
                         
                         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                         {{ $header }}
-        </h2>
+                        </h2>
                     </div>
                 </header>
-
-
-
-
-
             @endif
 
             <div class="py-6">
+                
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {{ $slot }} 
-      
+
+        @if($errors->any())
+
+                <div class="alet alert-danger">
+
+                    @foreach($errors->all() as $error)
+                         <li> {{$error}}</li>
+                    @endforeach
+                </div>  
+                    @endif
+
+
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{session ('success')}}
+                    </div>  
+                    @endif
+
+
+               {{ $slot }} 
                 
             </div>
         </div>
-    </div>
-        
-               
-            
+    </div>                  
         </div>
-
         @stack('modals')
-        {{ $js }} 
 
+        @isset($js)
+
+           {{ $js }} 
+
+        @endif
         @livewireScripts
     </body>
 </html>

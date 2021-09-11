@@ -1,7 +1,12 @@
 <x-app-layout>
 
-
 <x-slot name="header">quiz oluştur</x-slot>
+
+
+
+
+
+
 <div class="card">
        <div class="card-body">
 
@@ -10,14 +15,14 @@
 
     <div class="form-group">  
         <label>  Quiz Başlığı    </label>
-        <input type="text" name="title" class="form-control" required>   
+        <input type="text" name="title" class="form-control" value="{{old('title')}}" >   
     </div>  
 
 
 
     <div class="form-group">  
         <label>  Quiz açıklama   </label>
-        <textarea name="description "  class="form-control" rows="4"></textarea>
+        <textarea name="description "  class="form-control" rows="4">{{old('description')}}</textarea>
 
     </div>  
 
@@ -25,7 +30,7 @@
 
     <div class="form-group">  
 
-    <input id="isFinished" type="checkbox"  >   
+    <input id="isFinished" checked type="checkbox"  >   
         <label> Bitiş Tarihi  Olcak mı ? </label>
         
     </div>  
@@ -35,9 +40,9 @@
 
 
 
-    <div id="finishedInput" style="display: none" class="form-group">  
+    <div id="finishedInput"  style="display: none" class="form-group">  
         <label> Bitiş Tarihi  </label>
-        <input type="datetime-local" name="finished_at" class="form-control" >   
+        <input type="datetime-local" name="finished_at" value="{{old('finished_at')}}" class="form-control" >   
     </div>  
     
 
