@@ -28,6 +28,9 @@
       <td>{{$quiz->finiseh_at}}</td>
       <td>
 
+        <a href="{{route('sorular.inde',$quiz->id)}}" class="btn btn-sm btn-warning">
+          <i class="fa fa-question"></i> 
+        </a>
         <a href="{{route('quizzers.edit',$quiz->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
         <a href="{{route('quizzers.destroy',$quiz->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i> </a>
 

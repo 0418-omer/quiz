@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\SorularController;
 
 
 
@@ -18,6 +19,8 @@ Route::group(['middleware' => ['auth','isAdmin'],'prefix'=>'admin'], function ()
 
         Route::get('quizzers/{id}',[QuizController::class,'destroy'])->whereNumber('id')->name('quizzers.destroy');
         Route::resource('quizzers', QuizController::class);
+        Route::resource('quiz/{quiz_id}/sorular', SorularController::class);
+
         
 
 

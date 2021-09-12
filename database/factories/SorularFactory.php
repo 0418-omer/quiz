@@ -23,14 +23,7 @@ class SorularFactory extends Factory
     {
         return [
 
-            'quiz_id'=>rand(1,10),
-            'sorular'=>$this->faker->sentence(rand(3,7)),
-            'answer1'=>$this->faker->sentence(rand(1,3)),
-            'answer2'=>$this->faker->sentence(rand(1,3)),
-            'answer3'=>$this->faker->sentence(rand(1,3)),
-            'answer4'=>$this->faker->sentence(rand(1,3)),
-            'correct_answer'=>'answer'.rand(1,4)
-
+           
             
         ];
     }
